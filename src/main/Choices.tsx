@@ -1,4 +1,6 @@
 import * as React from "react";
+import Context from "./Context";
+import Hooks from "./Hooks";
 const Lazy = React.lazy(() => import("./Lazy"));
 
 interface IProps {
@@ -19,6 +21,10 @@ export default (props: IProps) => {
           <Lazy />
         </React.Suspense>
       );
+    case "context":
+      return <Context />;
+    case "hooks":
+      return <Hooks />;
     default:
       return (
         <div>
